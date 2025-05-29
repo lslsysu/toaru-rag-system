@@ -1,0 +1,11 @@
+tiktoken
+openai
+langchain-openai
+langchain-community
+langchain
+fastapi
+lxml
+unstructured
+chromadb
+torch
+gradio

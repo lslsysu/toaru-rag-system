@@ -1,0 +1,4 @@
+books/
+venv/
+vectordb/chroma/
+readme.ipynb
