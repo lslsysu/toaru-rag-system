@@ -52,5 +52,13 @@ def get_stream_completion(prompt, provider='zhizengzeng', model='gpt-3.5-turbo',
 
 if __name__ == '__main__':
 
-    for chunk in get_stream_completion(prompt='介绍一下欧提努斯', api_key= "sk-zk23595cc31f912feed99fd601663df6087681b41de060c3", base_url="https://api.zhizengzeng.com/v1"):
+    from dotenv import load_dotenv
+
+    load_dotenv()
+
+    # API configuration
+    API_KEY = os.getenv("API_KEY")
+    BASE_URL = 'https://api.zhizengzeng.com/v1'
+
+    for chunk in get_stream_completion(prompt='介绍一下欧提努斯', api_key= API_KEY, base_url=BASE_URL):
         print(chunk, end="|", flush=True)

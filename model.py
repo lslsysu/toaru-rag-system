@@ -84,8 +84,15 @@ class CustomChatModel(BaseChatModel):
         }
 
 if __name__ == "__main__":
-    chat = CustomChatModel(api_key= "sk-zk23595cc31f912feed99fd601663df6087681b41de060c3", base_url="https://api.zhizengzeng.com/v1",
-                    model = 'gpt-3.5-turbo', temperature=0.0)
+    from dotenv import load_dotenv
+    load_dotenv()
+
+    # API configuration
+    API_KEY = os.getenv("API_KEY")
+    BASE_URL = 'https://api.zhizengzeng.com/v1'
+
+
+    chat = CustomChatModel(api_key= API_KEY, base_url=BASE_URL, model = 'gpt-3.5-turbo', temperature=0.0)
     response = chat.invoke([HumanMessage(content="hello!")])
     print(response.content)
 
